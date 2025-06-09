@@ -3,9 +3,9 @@ import path from "path";
 import bodyParser from "body-parser";
 import cors from "cors";
 
-import authRoutes from "./src/routes/authRoutes";
-import cctvRoutes from "./src/routes/cctvRoutes";
-import discoverCctvRoutes from "./src/routes/discoverCctvRoutes";
+import authRoutes from "../routes/authRoutes";
+import cctvRoutes from "../routes/cctvRoutes";
+import discoverCctvRoutes from "../routes/discoverCctvRoutes";
 
 const app = express();
 

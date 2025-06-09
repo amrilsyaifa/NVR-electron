@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, session } from "electron";
 
 // Import backend server
 import "../backend/index";
@@ -12,7 +12,9 @@ function createWindow() {
     },
   });
 
-  mainWindow.loadURL("http://localhost:5173/#/home");
+  mainWindow.webContents.session.clearCache().then(() => {
+    mainWindow.loadURL("http://localhost:5173/#/home");
+  });
 }
 
 app.whenReady().then(() => {
@@ -21,6 +23,10 @@ app.whenReady().then(() => {
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
+});
+
+app.on("ready", () => {
+  session.defaultSession.clearCache();
 });
 
 app.on("window-all-closed", () => {

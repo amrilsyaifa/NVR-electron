@@ -47,3 +47,5 @@ coverage/
 
 backend/**/*.js
 # Ignore all .js files in the backend directory
+
+recordings/

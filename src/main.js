@@ -11,7 +11,9 @@ function createWindow() {
             nodeIntegration: true,
         },
     });
-    mainWindow.loadURL("http://localhost:5173/#/home");
+    mainWindow.webContents.session.clearCache().then(() => {
+        mainWindow.loadURL("http://localhost:5173/#/home");
+    });
 }
 electron_1.app.whenReady().then(() => {
     createWindow();
@@ -19,6 +21,9 @@ electron_1.app.whenReady().then(() => {
         if (electron_1.BrowserWindow.getAllWindows().length === 0)
             createWindow();
     });
+});
+electron_1.app.on("ready", () => {
+    electron_1.session.defaultSession.clearCache();
 });
 electron_1.app.on("window-all-closed", () => {
     if (process.platform !== "darwin") {

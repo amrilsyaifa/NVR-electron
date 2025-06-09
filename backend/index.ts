@@ -1,6 +1,6 @@
 import http from "http";
-import app from "./server";
-import { setupWebSocket } from "./wsServer";
+import app from "./src/servers/server";
+import { setupWebSocket } from "./src/servers/wsServer";
 
 const port = 8000;
 
