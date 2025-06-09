@@ -6,7 +6,6 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Electron build output
-/dist/
 build/
 out/
 release/
@@ -45,3 +44,6 @@ coverage/
 
 # db files
 *.sqlite
+
+backend/**/*.js
+# Ignore all .js files in the backend directory

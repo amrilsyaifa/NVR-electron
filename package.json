@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "start": "npm run build && electron .",
-    "server": "ts-node backend/server.ts",
+    "server": "ts-node backend/index.ts",
     "frontend": "npm --prefix ./frontend run dev",
     "electron": "wait-on tcp:5173 && npm run start",
     "dev": "concurrently \"npm run server\" \"npm run frontend\" \"npm run electron\"",

@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from "electron";
 
 // Import backend server
-import "../backend/server";
+import "../backend/index";
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
